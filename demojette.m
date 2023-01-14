@@ -1,0 +1,13 @@
+function[dec]=demojette(bin0,bin45,bin135)
+r=3;
+c=3;
+dec=zeros(r,c);
+dec(3,1)=bin135(1,1);
+dec(3,3)=bin45(1,1);
+dec(3,2)=bin0(1,1)-dec(3,1)-dec(3,3);
+dec(2,1)=bin135(1,2)-dec(3,2);
+dec(2,3)=bin45(1,2)-dec(3,2);
+dec(2,2)=bin0(1,2)-dec(2,1)-dec(2,3);
+dec(1,1)=bin135(1,3)-dec(2,2)-dec(3,3);
+dec(1,3)=bin45(1,3)-dec(2,2)-dec(3,1);
+dec(1,2)=bin0(1,3)-dec(1,1)-dec(1,3);
